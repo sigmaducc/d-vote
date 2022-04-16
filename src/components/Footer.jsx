@@ -32,12 +32,8 @@ const Footer = () => {
       <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 " />
 
       <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
-        <p className="text-slate-200 text-sm text-left text-xs">
-          Team No Sleep
-        </p>
-        <p className="text-slate-200 text-sm text-right text-xs">
-          All rights reserved
-        </p>
+        <p className="text-slate-200 text-sm text-left">Team No Sleep</p>
+        <p className="text-slate-200 text-sm text-right">All rights reserved</p>
       </div>
     </div>
   );

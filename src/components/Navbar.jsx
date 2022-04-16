@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import "../index.css";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 import logo from "../../images/logo36.png";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav className="gradient-bg-welcome w-full py-3 flex justify-around items-center flex-initial">
-      <div className="flex md:w-3/5 md:m-auto md:flex-row justify-between items-center">
+    <nav className="gradient-bg-navbar w-full p-4 flex justify-around items-center flex-initial">
+      <div className="flex w-11/12 md:m-auto md:flex-row justify-between items-center">
         <img className="min-w-max w-36 cursor-pointer" src={logo} alt="logo" />
 
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
-          <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">Home</li>
-          <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">
-            Admin Login
-          </li>
-          <li className="border-solid border-2 border-slate-200 bg-transparent py-1 px-2 mx-4 rounded-lg cursor-pointer hover:text-gray-300 hover:border-gray-300">
-            User Login
-          </li>
+          <Link to={`/`}>
+            <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">Home</li>
+          </Link>
+          <Link to={`/admin`}>
+            <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">
+              Admin Login
+            </li>
+          </Link>
+          <Link to={`/user`}>
+            <li className="border-solid border-2 border-slate-200 bg-transparent py-1 px-2 mx-4 rounded-lg cursor-pointer hover:text-gray-300 hover:border-gray-300">
+              User Login
+            </li>
+          </Link>
         </ul>
       </div>
 
