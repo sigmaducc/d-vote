@@ -7,6 +7,13 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import "./index.css";
+import {
+  BrowserRouter,Routes ,Route 
+} from "react-router-dom";
+import { Footer, Navbar } from "./components";
+
+
+
 
 const App = () => {
   return (
@@ -23,3 +30,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
