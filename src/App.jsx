@@ -15,7 +15,11 @@ import { Footer, Navbar } from "./components";
 
 
 
+
 const App = () => {
+ 
+
+  
   return (
     <BrowserRouter>
       <div className="App">
