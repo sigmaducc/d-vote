@@ -1,5 +1,6 @@
-![image](https://user-images.githubusercontent.com/101825685/163681098-fbdaebf8-e9e3-47b5-9940-6566c1100705.png)
-##
+#D-VOTE
+
+![image](https://i.imgur.com/dMO0MqL.png)
 
 D-VOTE is a decentralized voting system based on ethereum blockchain. E-voting is a trending, yet critical topic related to the online services.
 
@@ -18,7 +19,7 @@ npm install
 
 ## Usage
 
-< Steps >
+<Steps>
   
 ## Contributors 
 
@@ -26,4 +27,4 @@ npm install
 
 [@TonyStark0801](https://github.com/TonyStark0801)
 
-[@nitesh]()
+[@nitesh](https://github.com/nitesh0412)
