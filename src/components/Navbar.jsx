@@ -9,8 +9,8 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav className="gradient-bg-navbar w-full p-4 flex justify-around items-center flex-initial">
-      <div className="flex w-11/12 md:m-auto md:flex-row justify-between items-center">
+    <nav className="gradient-bg-navbar w-full p-6 flex justify-around items-center flex-initial">
+      <div className="max-w-[1600px] flex w-11/12 md:m-auto md:flex-row justify-between items-center px-10">
         <img className="min-w-max w-36 cursor-pointer" src={logo} alt="logo" />
 
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
@@ -53,6 +53,7 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
+            <li className="min-w-max cursor-pointer ssm:mx-20">Home</li>
             <li className="min-w-max cursor-pointer ssm:mx-20">Admin Login</li>
             <li className="min-w-max cursor-pointer ssm:mx-20">User Login</li>
           </ul>
