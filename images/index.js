@@ -4,6 +4,8 @@ export { default as aadhar }
 from "./aadhar.png";
 export { default as pie }
 from "./pie.png";
+export { default as blockchain }
+from "./blockchain.png";
 export { default as vote }
 from "./vote.png";
 export { default as logo28 }
