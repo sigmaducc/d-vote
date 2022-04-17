@@ -19,7 +19,7 @@ npm install
 
 ## Usage
 
-<Steps>
+< Steps >
   
 ## Contributors 
 
