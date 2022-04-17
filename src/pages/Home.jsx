@@ -1,10 +1,14 @@
 import React from "react";
-import { TimeLine } from "../components";
+import { Navbar, Footer, TimeLine, Blockchain, Democracy } from "../components";
 
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <TimeLine />
+      <Blockchain />
+      <Democracy />
+      <Footer />
     </div>
   );
 };
