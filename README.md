@@ -1,5 +1,6 @@
-![image](https://user-images.githubusercontent.com/101825685/163681098-fbdaebf8-e9e3-47b5-9940-6566c1100705.png)
-##
+<p align="center">
+  <img src="https://i.imgur.com/vV10KU3.png">
+</p>
 
 D-VOTE is a decentralized voting system based on ethereum blockchain. E-voting is a trending, yet critical topic related to the online services.
 
@@ -8,8 +9,7 @@ development of safer, cheaper, more secure, more transparent, and easier-to-use 
 
 An e-voting system must be secure, as it should not allow duplicated votes and be fully transparent, while protecting the privacy of the attendees.
 
-## Installation 
-
+## Installation
 
 ```
 git clone https://github.com/sigmaducc/d-vote && cd d-vote
@@ -18,12 +18,16 @@ npm install
 
 ## Usage
 
-< Steps >
-  
-## Contributors 
+Run the project
+
+```
+npm run dev
+```
+
+## Contributors
 
 [@sigmaducc](https://github.com/sigmaducc)
 
 [@TonyStark0801](https://github.com/TonyStark0801)
 
-[@nitesh]()
+[@nitesh](https://github.com/nitesh0412)
