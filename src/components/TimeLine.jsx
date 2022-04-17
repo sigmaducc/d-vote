@@ -18,13 +18,13 @@ const HorizontalLineLtoR = () => {
   return (
     <div className="grid grid-cols-4 w-full">
       <div className="col-start-1 col-end-2 p-0 h-10 overflow-hidden">
-        <div className="relative h-10 rounded-full w-full border-2 border-solid border-white  left-1/2 -top-1/2"></div>
+        <div className="relative h-10 rounded-full w-full border-2 border-solid border-slate-200  left-1/2 -top-1/2"></div>
       </div>
       <div className="col-start-2 col-end-4 overflow-hidden">
-        <div className="relative h-10 border-b-2 border-solid border-white -top-1/2"></div>
+        <div className="relative h-10 border-b-2 border-solid border-slate-200 -top-1/2"></div>
       </div>
       <div className="col-start-4 col-end-5 p-0 h-10 overflow-hidden">
-        <div className="relative h-10 rounded-full w-full border-2 border-solid border-white  calc-right calc-top"></div>
+        <div className="relative h-10 rounded-full w-full border-2 border-solid border-slate-200  calc-right calc-top"></div>
       </div>
     </div>
   );
@@ -37,7 +37,7 @@ const HorizontalLineRtoL = () => {
         <div className="relative h-10 rounded-full w-full border-2 border-solid border-slate-200  left-1/2 calc-top"></div>
       </div>
       <div className="col-start-2 col-end-4 overflow-hidden">
-        <div className="relative h-10 border-b-2 border-solid border-white -top-1/2"></div>
+        <div className="relative h-10 border-b-2 border-solid border-slate-200 -top-1/2"></div>
       </div>
       <div className="col-start-4 col-end-5 p-0 h-10 overflow-hidden">
         <div className="relative h-10 rounded-full w-full border-2 border-solid border-slate-200  calc-right -top-1/2"></div>
@@ -46,7 +46,7 @@ const HorizontalLineRtoL = () => {
   );
 };
 
-const StepOdd = ({ img, title }) => {
+const OddStep = ({ img, title }) => {
   return (
     <div className="grid grid-cols-4 w-full items-center">
       <div>
@@ -63,7 +63,7 @@ const StepOdd = ({ img, title }) => {
   );
 };
 
-const StepEven = ({ img, title }) => {
+const EvenStep = ({ img, title }) => {
   return (
     <div className="grid grid-cols-4 w-full items-center  ">
       <h5 className="col-start-1 text-right col-end-4 whitespace-nowrap ">
@@ -85,31 +85,31 @@ const StepEven = ({ img, title }) => {
 const TimeLine = () => {
   return (
     <div className=" gradient-bg-timeline flex w-full justify-center items-center">
-      <div className="flex lg:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
+      <div className="max-w-[1600px] flex lg:flex-row flex-col items-center justify-between p-20">
         <div className="flex-1 flex flex-col justify-start items-start">
           <h1 className="text-slate-200 text-5xl py-2 text-gradient ">
             3 Easy steps to <br />
-            vote on the blockchain
+            vote on the Blockchain
           </h1>
-          <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-lg">
+          <p className="text-left my-2 text-slate-200 font-light md:w-9/12 w-11/12 text-lg">
             Making the process of electronic voting a lot simpler. We believe in
             democracy and everyone's right to vote. Bringing voting at your
             doorsteps.
           </p>
         </div>
 
-        <div className="flex-1 w-full flex flex-col text-xl text-slate-200  mt-20 ">
-          <StepOdd
+        <div className="flex-1 w-full flex flex-col text-xl text-slate-200  mt-10 ">
+          <OddStep
             key={0}
             img={aadhar}
             title="Step 1: Aadhaar Authentication"
           />
           <HorizontalLineLtoR />
-          <StepEven key={1} img={metamask} title="Step 2: Setup Metamask" />
+          <EvenStep key={1} img={metamask} title="Step 2: Setup Metamask" />
           <HorizontalLineRtoL />
-          <StepOdd key={2} img={vote} title="Step 3: Cast Vote" />
+          <OddStep key={2} img={vote} title="Step 3: Cast Vote" />
           <HorizontalLineLtoR />
-          <StepEven key={3} img={pie} title="Step 4: Vote Result" />
+          <EvenStep key={3} img={pie} title="Step 4: Vote Result" />
         </div>
       </div>
     </div>
