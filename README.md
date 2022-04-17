@@ -1,4 +1,6 @@
-![image](https://i.imgur.com/vV10KU3.png)
+<p align="center">
+  <img src="https://i.imgur.com/vV10KU3.png">
+</p>
 
 D-VOTE is a decentralized voting system based on ethereum blockchain. E-voting is a trending, yet critical topic related to the online services.
 
