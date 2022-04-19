@@ -5,6 +5,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo36.png";
 
+const connect = () =>{
+  let provider = window.ethereum;
+  if(typeof provider !=  'undefined'){
+  console.log("I can See Metamask")
+  provider.request({
+    method:'eth_requestAccounts'}).then(accounts=>{
+      console.log(accounts);
+    }).catch(err=>{
+      console.log(err);
+    });
+}
+else{console.log("Nope!")}
+}
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -24,7 +38,7 @@ const Navbar = () => {
           </Link>
           <Link to={`/user`}>
             <li className="border-solid border-2 border-slate-200 bg-transparent py-1 px-2 mx-4 rounded-lg cursor-pointer hover:text-gray-300 hover:border-gray-300">
-              User Login
+            <button onClick={connect}>Connect</button>
             </li>
           </Link>
         </ul>
