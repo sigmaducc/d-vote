@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Footer, TimeLine, Blockchain, Democracy } from "../components";
 
-
 const Home = () => {
   return (
     <div>
