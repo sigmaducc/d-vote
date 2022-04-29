@@ -9,8 +9,7 @@ development of safer, cheaper, more secure, more transparent, and easier-to-use 
 
 An e-voting system must be secure, as it should not allow duplicated votes and be fully transparent, while protecting the privacy of the attendees.
 
-## Installation 
-
+## Installation
 
 ```
 git clone https://github.com/sigmaducc/d-vote && cd d-vote
@@ -19,9 +18,13 @@ npm install
 
 ## Usage
 
-< Steps >
-  
-## Contributors 
+Run the project
+
+```
+npm run dev
+```
+
+## Contributors
 
 [@sigmaducc](https://github.com/sigmaducc)
 
