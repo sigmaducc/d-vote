@@ -8,15 +8,15 @@ import logo from "../../images/logo36.png";
 const connect = () =>{
   let provider = window.ethereum;
   if(typeof provider !=  'undefined'){
-    console.log("I can See Metamask")
-    provider.request({
-      method:'eth_requestAccounts'}).then(accounts=>{
-        console.log(accounts);
-      }).catch(err=>{
-        console.log(err);
-      });
-  }
-  else{alert("Please Install Metamask!")}
+  console.log("I can See Metamask")
+  provider.request({
+    method:'eth_requestAccounts'}).then(accounts=>{
+      console.log(accounts);
+    }).catch(err=>{
+      console.log(err);
+    });
+}
+else{console.log("Nope!")}
 }
 
 const Navbar = () => {
@@ -25,9 +25,7 @@ const Navbar = () => {
   return (
     <nav className="gradient-bg-navbar w-full p-6 flex justify-around items-center flex-initial">
       <div className="max-w-[1600px] flex w-11/12 md:m-auto md:flex-row justify-between items-center px-10">
-        <Link to={`/`}>
-          <img className="min-w-max w-36 cursor-pointer" src={logo} alt="logo" />
-        </Link>
+        <img className="min-w-max w-36 cursor-pointer" src={logo} alt="logo" />
 
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
           <Link to={`/`}>
@@ -38,9 +36,9 @@ const Navbar = () => {
               Admin Login
             </li>
           </Link>
-          <Link to={`/adhaar`}>
+          <Link to={`/user`}>
             <li className="border-solid border-2 border-slate-200 bg-transparent py-1 px-2 mx-4 rounded-lg cursor-pointer hover:text-gray-300 hover:border-gray-300">
-            <button>Voter Login</button>
+            <button onClick={connect}>Connect</button>
             </li>
           </Link>
         </ul>

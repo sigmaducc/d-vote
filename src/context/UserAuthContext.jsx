@@ -11,6 +11,7 @@ import {
   signInWithPhoneNumber
 } from "firebase/auth";
 import { auth } from "../firebase";
+import { DeleteForeverSharp } from "@material-ui/icons";
 
 
 const userAuthContext = createContext();
@@ -61,7 +62,7 @@ export function UserAuthContextProvider({ children }) {
     </userAuthContext.Provider>
   );
 }
-
 export function useUserAuth() {
   return useContext(userAuthContext);
 }
+export default useUserAuth;

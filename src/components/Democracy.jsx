@@ -3,6 +3,7 @@ import data from "../data";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import Slider from "react-slick";
 
+
 const Card = ({ description, spokesman }) => {
   return (
     <div className="white-glassmorphism mx-2">
