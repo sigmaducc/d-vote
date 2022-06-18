@@ -6,11 +6,12 @@ import { Form,Alert } from 'react-bootstrap';
 import { getDoc,doc} from "firebase/firestore";
 import { db } from "../firebase";
 import { RecaptchaVerifier,getAuth,signInWithPhoneNumber } from 'firebase/auth';
+import { Navbar,Footer} from '../components';
 
 
 
 export default function AdhaarAuth() {
-    
+
     const [adhaar,setadhaar] = useState("");
     const [otp , setOtp]= useState("");
     const [error ,setError]= useState("");
@@ -21,7 +22,8 @@ export default function AdhaarAuth() {
     const navigate = useNavigate();
     var phone="";
 
-    function setUpRecaptcha(number){
+    // Recaptcha Loader
+    async function setUpRecaptcha(number){
         const auth = getAuth();
         const  reCaptchaVerifier = new RecaptchaVerifier("recaptcha-container",
         {},
@@ -30,8 +32,11 @@ export default function AdhaarAuth() {
         reCaptchaVerifier.render();
         return signInWithPhoneNumber(auth,number,reCaptchaVerifier); 
     }
-    const getAdhaar= async(e)=>{
+    //Getting Phone number from firebase
+    const getPhone= async(e)=>{
+        //Preventing default action of form
         e.preventDefault();
+        
         if(adhaar === "" || adhaar === undefined) 
             return setError("Please enter a valid Adhaar Number ");
         try{
@@ -39,9 +44,11 @@ export default function AdhaarAuth() {
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 phone = docSnap.get("Phone")
-                console.log("phone:"+ phone);
+                // console.log("phone:"+ phone);
+                //create an alert over here
                 getOTP(e);
             } else {
+                //Adhaar card is not registered,create an alert over here
                 console.log("No such document!");
             }
         }
@@ -51,6 +58,7 @@ export default function AdhaarAuth() {
         
     };
 
+    //Seding otp flag: true otp send, flag: false: otp failed
     const getOTP = async (e)=>{
     e.preventDefault();
     
@@ -65,6 +73,7 @@ export default function AdhaarAuth() {
     }
     };
 
+    //Verify otp
     const verifyOTP = async (e)=>{
         e.preventDefault();
         console.log(otp);
@@ -83,19 +92,21 @@ export default function AdhaarAuth() {
 
 
     return (
-        
-        <div className="p-4 box">
-            <h2 className="mb-3">Phone Number Login</h2>
-            <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size' alt='Adhaar'/>
+        <div>
+            <Navbar />
+            <div>
+      <div className="p-4 box">
+        <h2 className="mb-3">Phone Number Login</h2>
+        <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size' alt='Adhaar'/>
             {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={getAdhaar} style={{display:!flag ? "block":"none"}}>
+            <Form onSubmit={getPhone} style={{display:!flag ? "block":"none"}}>
                 <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
                     <Form.Control
                         type="text"
                         placeholder="Enter Adhaar Number"
                         value={adhaar}
                         onChange={(e)=> setadhaar(e.target.value)}
-                        />
+                    />
                     &nbsp;
                     <div  id="recaptcha-container"/>
                 </Form.Group>
@@ -103,7 +114,7 @@ export default function AdhaarAuth() {
                     <Link to="/">
                         <Button variant = "secondary">Cancel</Button> &nbsp;
                     </Link>
-                        <Button variant = "primary" type='submit'>Send OTP</Button>    
+                    <Button variant = "primary" type='submit'>Send OTP</Button>    
                 </div>
             </Form>
 
@@ -114,19 +125,21 @@ export default function AdhaarAuth() {
                         type="text"
                         placeholder="Enter OTP"
                         onChange = {(e)=> setOtp(e.target.value)}
-                        />
-                
+                    />
                 </Form.Group>
-
+                
                 <div className='button-right'>
                     <Link to="/">
                         <Button variant = "secondary">Cancel</Button> &nbsp;
                     </Link>
-                        <Button variant = "primary" type='submit'>Verify OTP</Button>    
+                    <Button variant = "primary" type='submit'>Verify OTP</Button>    
                 </div>
             </Form>
             
         </div>
-        
+    </div>
+    <Footer />
+        </div>
     )
+
 }

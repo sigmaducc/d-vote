@@ -5,19 +5,19 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo36.png";
 
-const connect = () =>{
-  let provider = window.ethereum;
-  if(typeof provider !=  'undefined'){
-    console.log("I can See Metamask")
-    provider.request({
-      method:'eth_requestAccounts'}).then(accounts=>{
-        console.log(accounts);
-      }).catch(err=>{
-        console.log(err);
-      });
-  }
-  else{alert("Please Install Metamask!")}
-}
+// const connect = () =>{
+//   let provider = window.ethereum;
+//   if(typeof provider !=  'undefined'){
+//     console.log("I can See Metamask")
+//     provider.request({
+//       method:'eth_requestAccounts'}).then(accounts=>{
+//         console.log(accounts);
+//       }).catch(err=>{
+//         console.log(err);
+//       });
+//   }
+//   else{alert("Please Install Metamask!")}
+// }
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -30,22 +30,21 @@ const Navbar = () => {
         </Link>
 
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
-          <Link to={`/`}>
-            <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">Home</li>
+          <Link to={`/`} class="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">
+            Home
           </Link>
-          <Link to={`/admin`}>
-            <li className="cursor-pointer hover:text-[#BBBBBB] mx-4">
-              Admin Login
-            </li>
+          <Link to={`/admin`} class="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">
+            Admin
           </Link>
-          <Link to={`/adhaar`}>
-            <li className="border-solid border-2 border-slate-200 bg-transparent py-1 px-2 mx-4 rounded-lg cursor-pointer hover:text-gray-300 hover:border-gray-300">
-            <button>Voter Login</button>
-            </li>
+
+          <Link to={`/adhaar`} class=" text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">
+            Login
           </Link>
+  
         </ul>
       </div>
 
+      {/* For Mobile phone */}
       <div className="flex relative">
         {!toggleMenu && (
           <HiMenuAlt4
@@ -75,6 +74,7 @@ const Navbar = () => {
           </ul>
         )}
       </div>
+      
     </nav>
   );
 };
