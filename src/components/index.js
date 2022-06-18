@@ -8,3 +8,5 @@ export { default as Democracy }
 from "./Democracy";
 export { default as Footer }
 from "./Footer";
+export { default as Metamask}
+from "./Metamask"
