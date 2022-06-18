@@ -5,19 +5,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo36.png";
 
-// const connect = () =>{
-//   let provider = window.ethereum;
-//   if(typeof provider !=  'undefined'){
-//     console.log("I can See Metamask")
-//     provider.request({
-//       method:'eth_requestAccounts'}).then(accounts=>{
-//         console.log(accounts);
-//       }).catch(err=>{
-//         console.log(err);
-//       });
-//   }
-//   else{alert("Please Install Metamask!")}
-// }
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -29,8 +16,8 @@ const Navbar = () => {
 
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
           <Link to={`/`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Home</Link>
-          <Link to={`/admin`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Admin</Link>
-          <Link to={`/adhaar`} className=" text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Login</Link>
+          <Link to={`/about`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">About</Link>
+          <Link to={`/aadhaar`} className=" text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Login</Link>
         </ul>
       
       </div>

@@ -10,7 +10,7 @@ import { Navbar,Footer} from '../components';
 
 
 
-export default function AdhaarAuth() {
+export default function Aadhaar() {
 
     const [adhaar,setadhaar] = useState("");
     const [otp , setOtp]= useState("");
@@ -94,52 +94,57 @@ export default function AdhaarAuth() {
     return (
         <div>
             <Navbar />
-            <div>
-      <div className="p-4 box">
-        <h2 className="mb-3">Phone Number Login</h2>
-        <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size' alt='Adhaar'/>
-            {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={getPhone} style={{display:!flag ? "block":"none"}}>
-                <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter Adhaar Number"
-                        value={adhaar}
-                        onChange={(e)=> setadhaar(e.target.value)}
-                    />
-                    &nbsp;
-                    <div  id="recaptcha-container"/>
-                </Form.Group>
-                <div className='button-right'>
-                    <Link to="/">
-                        <Button variant = "secondary">Cancel</Button> &nbsp;
-                    </Link>
-                    <Button variant = "primary" type='submit'>Send OTP</Button>    
-                </div>
-            </Form>
+            <div className='gradient-bg-timeline p-4'>
+                <div className="p-4 bg-transparent max-w-lg rounded  box mx-auto my-10 border-0 ">
+                    <h2 className="mb-3 font-serif text-white text-center">Aadhaar Card Authentication</h2>
+                    <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size mx-auto' alt='Adhaar'/>
+                    
+                    
+                    <Form onSubmit={getPhone} style={{display:!flag ? "block":"none"}}>
+                        <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter Adhaar Number"
+                                value={adhaar}
+                                onChange={(e)=> setadhaar(e.target.value)}
+                            />  
+                            {error && <p class="text-red-500 text-xs italic">{error}</p>}
+                            
+                        </Form.Group>
+
+                        <div  id="recaptcha-container"/>
+                        <Link to="/"><button class="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
+                        <Button class="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Send OTP</Button>    
+
+                    </Form>
 
 
-            <Form onSubmit={verifyOTP} style={{display: flag ? "block":"none"}}>
-                <Form.Group className="mb-3" controlId="formBasicotp">
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter OTP"
-                        onChange = {(e)=> setOtp(e.target.value)}
-                    />
-                </Form.Group>
+                    <Form onSubmit={verifyOTP} style={{display: flag ? "block":"none"}}>
+                        <Form.Group className="mb-3" controlId="formBasicotp">
+                            <Form.Control
+                            type="text"
+                            placeholder="Enter OTP"
+                            onChange = {(e)=> setOtp(e.target.value)}
+                            />
+                        </Form.Group>
                 
-                <div className='button-right'>
-                    <Link to="/">
-                        <Button variant = "secondary">Cancel</Button> &nbsp;
-                    </Link>
-                    <Button variant = "primary" type='submit'>Verify OTP</Button>    
+                    
+                        <Link to="/">
+                        <button class="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
+                        <Button class="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Verify OTP</Button>
+                        
+                    </Form>
+
                 </div>
-            </Form>
-            
-        </div>
-    </div>
-    <Footer />
+            </div>
+            <Footer />
         </div>
     )
 
 }
+
+
+
+
+
+            
