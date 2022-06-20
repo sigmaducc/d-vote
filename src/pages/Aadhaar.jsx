@@ -95,7 +95,7 @@ export default function Aadhaar() {
         <div>
             <Navbar />
             <div className='gradient-bg-timeline p-4'>
-                <div className="p-4 bg-transparent max-w-lg rounded  box mx-auto my-10 border-0 ">
+                <div className="p-4 bg-white shadow-white  max-w-lg rounded  box mx-auto my-10 border-10  ">
                     <h2 className="mb-3 font-serif text-white text-center">Aadhaar Card Authentication</h2>
                     <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size mx-auto' alt='Adhaar'/>
                     
@@ -108,13 +108,13 @@ export default function Aadhaar() {
                                 value={adhaar}
                                 onChange={(e)=> setadhaar(e.target.value)}
                             />  
-                            {error && <p class="text-red-500 text-xs italic">{error}</p>}
+                            {error && <p className="text-red-500 text-xs italic">{error}</p>}
                             
                         </Form.Group>
 
-                        <div  id="recaptcha-container"/>
-                        <Link to="/"><button class="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
-                        <Button class="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Send OTP</Button>    
+                        <div  id="recaptcha-container" className=' mx-auto'/>
+                        <Link to="/"><button className="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
+                        <Button className="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Send OTP</Button>    
 
                     </Form>
 
@@ -130,8 +130,8 @@ export default function Aadhaar() {
                 
                     
                         <Link to="/">
-                        <button class="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
-                        <Button class="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Verify OTP</Button>
+                        <button className="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
+                        <Button className="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Verify OTP</Button>
                         
                     </Form>
 

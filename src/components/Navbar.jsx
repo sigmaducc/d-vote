@@ -6,9 +6,22 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo36.png";
 
 
+
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-
+  let admin = "0xdb052d7f3f1ae52cbe01aa60f8a1bd01418e1739"
+  function a(){
+    ethereum.request({
+      method:'eth_requestAccounts'})
+      .then(value=>{
+        if(admin==value[0]){
+          window.location="admin"
+        }
+        else 
+        window.location="aadhaar"
+      })
+  }
   return (
     <nav className="gradient-bg-navbar w-full p-6 flex justify-around items-center flex-initial">
       <div className="max-w-[1600px] flex w-11/12 md:m-auto md:flex-row justify-between items-center px-10">
@@ -17,8 +30,8 @@ const Navbar = () => {
         <ul className="text-base text-slate-200 md:flex hidden list-none flex-row justify-between items-center flex-initial">
           <Link to={`/`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Home</Link>
           <Link to={`/about`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">About</Link>
-          <Link to={`/aadhaar`} className=" text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Login</Link>
-        </ul>
+          <div onClick={a}  className={"text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg "+(window.location.pathname=='/aadhaar'? 'hidden':'')}>Login</div>
+        </ul> 
       
       </div>
 

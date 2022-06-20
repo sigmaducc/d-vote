@@ -7,4 +7,6 @@ from "./Home";
 export { default as Aadhaar }
 from "./Aadhaar";
 export {default as Four04page}
-from "./Four04page"
+from "./Four04page";
+export {default as Admin}
+from "./Admin"

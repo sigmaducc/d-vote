@@ -1,5 +1,5 @@
 import React from "react";
-import { User, About, Home,Aadhaar, Four04page} from "./pages";
+import { User, About, Home,Aadhaar, Four04page,Admin} from "./pages";
 import {
   Route,
   Routes,
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/about" exact element={<About />} />
           <Route path="/user" exact element={<User />} />
           <Route path="/aadhaar" exact element={<Aadhaar/>} />
+          <Route path="/admin" exact element={<Admin/>} />
           <Route path="*" exact element={< Four04page/>} />
         </Routes>
       </div>
