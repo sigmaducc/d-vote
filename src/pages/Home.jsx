@@ -1,11 +1,11 @@
 import React from "react";
 import { Navbar, Footer, TimeLine, Blockchain, Democracy,Metamask } from "../components";
+var account;
 
-
-const Home = () => {
+const Home =  () => {
+  Metamask()
   return (
     <div>
-      <Metamask/>
       <Navbar/>
       <TimeLine />
       <Blockchain />

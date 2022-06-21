@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import 'react-phone-number-input/style.css'
 import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { Form,Alert } from 'react-bootstrap';
 import { getDoc,doc} from "firebase/firestore";
 import { db } from "../firebase";
 import { RecaptchaVerifier,getAuth,signInWithPhoneNumber } from 'firebase/auth';
@@ -96,46 +95,49 @@ export default function Aadhaar() {
             <Navbar />
             <div className='gradient-bg-timeline p-4'>
                 <div className="p-4 bg-white shadow-white  max-w-lg rounded  box mx-auto my-10 border-10  ">
-                    <h2 className="mb-3 font-serif text-white text-center">Aadhaar Card Authentication</h2>
+                    <h2 className="mb-3 font-serif text-black text-center">Aadhaar Card Authentication</h2>
                     <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png' className='size mx-auto' alt='Adhaar'/>
                     
                     
-                    <Form onSubmit={getPhone} style={{display:!flag ? "block":"none"}}>
-                        <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                            <Form.Control
+                    <form onSubmit={getPhone} style={{display:!flag ? "block":"none"}}>
+                        <div className="mb-3">
+                            <input
                                 type="text"
                                 placeholder="Enter Adhaar Number"
+                                className='form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
                                 value={adhaar}
                                 onChange={(e)=> setadhaar(e.target.value)}
                             />  
                             {error && <p className="text-red-500 text-xs italic">{error}</p>}
-                            
-                        </Form.Group>
+
+                        </div>
 
                         <div  id="recaptcha-container" className=' mx-auto'/>
                         <Link to="/"><button className="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
                         <Button className="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Send OTP</Button>    
 
-                    </Form>
+                    </form>
 
 
-                    <Form onSubmit={verifyOTP} style={{display: flag ? "block":"none"}}>
-                        <Form.Group className="mb-3" controlId="formBasicotp">
-                            <Form.Control
+                    <form onSubmit={verifyOTP} style={{display: flag ? "block":"none"}}>
+                        <div className="mb-3">
+                            <input
                             type="text"
+                            className='form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
                             placeholder="Enter OTP"
                             onChange = {(e)=> setOtp(e.target.value)}
                             />
-                        </Form.Group>
+                        </div>
                 
                     
                         <Link to="/">
                         <button className="mx-14 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" type="button">Cancel</button></Link>
                         <Button className="mx-16 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='submit'>Verify OTP</Button>
                         
-                    </Form>
+                    </form>
 
                 </div>
+                <p className="text-center text-gray-500 text-xs">&copy;2022 NSA Engineers. All rights reserved.</p>
             </div>
             <Footer />
         </div>
