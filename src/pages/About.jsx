@@ -1,11 +1,15 @@
 import React from "react";
+import { Footer, Navbar } from "../components";
 
 const About = () => {
+
   return(
-    <div >
-    {/* <img src="https://i.pinimg.com/originals/bc/0c/5b/bc0c5b77a41dc721acb4acd75940bd42.png" alt="image" /> */}
-    <h1 className="font-serif mx-auto max-w-sm w-full mt-60 p-4"> Working For you !</h1>
-    <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full  mx-auto">
+    < >
+    <Navbar/>
+    <div className="gradient-bg-timeline p-4">
+
+    <h1 className="font-serif text-white mx-auto max-w-sm w-full mt-4 p-4"> Working For you !</h1>
+    <div className="border bg-white border-blue-300 shadow rounded-md p-4 mb-4 max-w-sm w-full  mx-auto">
   <div className="animate-pulse flex space-x-4">
     <div className="rounded-full bg-slate-700 h-10 w-10"></div>
     <div className="flex-1 space-y-6 py-1">
@@ -21,6 +25,8 @@ const About = () => {
   </div>
 </div>
     </div>
+<Footer/>
+    </>
   )
 };
 
