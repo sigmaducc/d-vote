@@ -10,12 +10,12 @@ import logo from "../../images/logo36.png";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  let admin = "0xdb052d7f3f1ae52cbe01aa60f8a1bd01418e1737"
-  let a = ()=>{
-    let data = JSON.parse(sessionStorage.getItem('admin'));
+  let admin = "0x092C4A4df135bB5FBc50Ae9681576932f84adC67"
+  let data = JSON.parse(sessionStorage.getItem('admin'));
+  let a =  ()=>{
     console.log(data[0])
     if(admin===data[0] || data===null){
-      window.location="admin"
+      window.location="login"
     }
     else alert("You don't have admin priveleges ")
   }
@@ -64,7 +64,7 @@ const Navbar = () => {
             </li>
             
             <Link to={`/`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Home</Link>
-            <Link to={`/admin`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Admin</Link>
+            <Link to={`/login`} className="text-xl cursor-pointer hover:text-[#BBBBBB] mx-4 bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Admin</Link>
             <Link to={`/adhaar`} className=" text-xl cursor-pointer hover:text-[#BBBBBB] mx-4  bg-transparent text-white no-underline  font-semibold  py-2 px-4 hover:border   rounded-lg">Login</Link>
           
           </ul>

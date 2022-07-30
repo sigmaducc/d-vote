@@ -16,3 +16,5 @@ export { default as logo48 }
 from "./logo48.png";
 export { default as logo72 }
 from "./logo72.png";
+export { default as emblem }
+from "./emblem.png";

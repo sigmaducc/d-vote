@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
-
+// require("dotenv").config();
 const firebaseConfig = {
     apiKey: "AIzaSyAZ40WlcQLAnOq6o-qpHIDYazt-V02LUKM",
     authDomain: "dvote-90b17.firebaseapp.com",
