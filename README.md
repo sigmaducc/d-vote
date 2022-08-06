@@ -96,7 +96,9 @@ account(admin). Voter’s metamask
 <p align="center">
 	<img src="https://imgur.com/vmcK0LI.png">
 </p>
+
 ## Contributors
+
 [@sigmaducc](https://github.com/sigmaducc)
 
 [@TonyStark0801](https://github.com/TonyStark0801)
